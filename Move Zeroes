@@ -1,0 +1,15 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int nonZero = 0; // Pointer for the next non-zero element's position
+
+        // Iterate through the vector, swapping non-zero elements to the front
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] != 0) {
+                // Swap non-zero element with the element at the nonZero index
+                swap(nums[nonZero], nums[i]);
+                nonZero++; // Increment nonZero to point to the next position
+            }
+        }
+    }
+};
