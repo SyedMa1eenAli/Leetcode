@@ -1,0 +1,15 @@
+class Solution {
+public:
+    string toHex(int num) {
+        if (num == 0) return "0";
+        
+        string result;
+        while (num != 0 && result.size() < 8) {
+            int remainder = num & 0xF; // Get last 4 bits
+            char c = (remainder < 10) ? ('0' + remainder) : ('a' + remainder - 10);
+            result = c + result;
+            num >>= 4; // Shift right by 4 bits
+        }
+        return result;
+    }
+};
